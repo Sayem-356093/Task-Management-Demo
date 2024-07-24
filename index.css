@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Karla", sans-serif;
+  color: #fff;
+}
+
+.page-wrapper{
+    padding: 100px 0px;
+    min-height: 100svh;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.due-date.red{
+    color: red;
+}
+
+.task-name.complete{
+    text-decoration: line-through;
+    color: #bdbdbd;
+}
+
+.all-task-wrapper{
+    width: 740px;
+    padding: 40px;
+    background-color: #141414;
+    border: 2px solid rgba(88, 130, 193, 0.28);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+}
+
+.progress-info-container{
+    width: 740px;
+    padding: 40px;
+    background-color: #141414;
+    border: 2px solid rgba(88, 130, 193, 0.28);
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+.task-item{
+
+    padding: 16px 24px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+}
+
+.task-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-options{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    row-gap: 16px;
+}
+
+.task-button-wrapper{
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+}
+
+.progress{
+    width: 32px;
+    height: 28px;
+}
+
+.edit{
+
+    padding: 5px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #008f13;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.delete{
+    width: 32px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #a50000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-toggle{
+    width: 32px;
+    height: 28px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: orange;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.task-info{
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #fff;
+    line-height: 1.6;
+}
+
+.task-info-block{
+    height: 0px;
+    overflow: hidden;
+}
+
+.task-info-block.active{
+    height: auto;
+}
+
+.add-task-popup, .edit-task-popup{
+    position: fixed;
+    top: -100%;
+    left: 0px;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000c4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.add-task-popup.active, .edit-task-popup.active{
+    top: 0%;
+}
+
+.add-task-form, .edit-task-form{
+    width: 600px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    background-color: #2e2e2e;
+    border-radius: 20px;
+}
+
+input {
+    height: 60px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+textarea {
+    height: 150px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    font-size: 18px;
+    line-height: 1.6;
+}
+input::placeholder, textarea::placeholder{
+    color: #ffffffa6;
+
+}
+input:focus-visible, textarea:focus-visible{
+
+    outline: none;
+    border-bottom: 2px solid orange;
+}
+
+#add-task, .update-task{
+    padding: 16px;
+    background-color: orange;
+    border-radius: 5px;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.popup-button{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orange;
+    font-size: 60px;
+    color: #000;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.progress-bar{
+    height: 30px;
+    border: 2px solid orange;
+}
+.progress-inner{
+    width: 0%;
+    height: 100%;
+    background-color: orange;
+    transition: all 0,5s ease;
+}
+
+.progress-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: 40px;
+    row-gap: 40px;
+    margin-top: 60px;
+    
+}
+
+.progress-bar-text{
+    margin-bottom: 24px;
+}

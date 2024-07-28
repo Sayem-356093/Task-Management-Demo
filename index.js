@@ -163,6 +163,8 @@ function showAlert() {
   });
 }
 
+setInterval(showAlert, 1000);
+
 function progressWidth(numb){
   let width;
   let progressText = document.querySelector(".progress-bar-text")
